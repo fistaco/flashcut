@@ -20,12 +20,13 @@ class FlashCut():
             (retval, frame) = self.cap.read()
 
             # Preprocess image
-            frame = cv2.resize(frame, (960, 540))
+            frame = self.preprocess_frame(frame, 960, 540)
 
     def preprocess_frame(self, frame, width, height):
         """
         Preprocesses the given `frame` by reducing its dimensions to
         """
+        return cv2.resize(frame, (width, height))
 
     def compute_img_features(self, frame):
         pass
